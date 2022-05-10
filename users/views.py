@@ -4,6 +4,9 @@ from django.views.generic import ListView
 
 class IndexView(ListView):
     def get(self, request):
-        msg = '<h1>Welcome to the Shit Show </h1>'
-        return render(request, 'base.html')
-        # return HttpResponse(msg)
+        msg = 'Welcome to the Shit Show'
+        ctx = {
+            "message":msg
+        }
+        return render(request, 'index.html', ctx)
+        # return HttpResponse(msg)P 
